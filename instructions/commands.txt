@@ -11,7 +11,9 @@ frappeRequest.js:81 Uncaught (in promise) Error: /api/method/ping CSRFTokenError
     at Object.transformResponse (frappeRequest.js:81:17)
     at async fetch2 (resources.js:103:18)
 
-  <meta name="csrf-token" content="{{ csrf_token() }}"> in index.html
+<script>
+  window.csrf_token = '{{ frappe.session.csrf_token }}'
+</script> in index.html
 
 
 
@@ -22,7 +24,5 @@ add to   optimizeDeps: {
   },
 
 
-
-Uncaught (in promise) SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
 
 
