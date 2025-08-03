@@ -1,31 +1,28 @@
 bench get-app https://github.com/NagariaHussain/doppio
 
-Set up a Frappe application using Docker for development. frappe docker
-Create a Vue.js application inside the Frappe app using Doppio.
-bench add-spa
-Run the Vue.js application in development mode within the Docker container.
- yarn dev or npm run dev
-Attempt to access the Vue.js application from the host machine or external network.
-
-adding host: '0.0.0.0', to my vite config file fixed the issue
-
 bench add-frappe-ui
 
 then add missing appname to vite.config.js
-
-bench add-spa
+adding host: '0.0.0.0', to my vite config file fixed the issue
 
 Navigated to http://localhost:8080/
-grid-item.vue.mjs?v=5c0164dc:7 Uncaught SyntaxError: The requested module '/node_modules/interactjs/dist/interact.min.js?v=5c0164dc' does not provide an export named 'default' (at grid-item.vue.mjs?v=5c0164dc:7:8)Understand this error
-
-add to   optimizeDeps: {
-    include: ["feather-icons", "showdown", "highlight.js/lib/core", 'interactjs'],
-  },
 
 frappeRequest.js:81 Uncaught (in promise) Error: /api/method/ping CSRFTokenError
     at Object.transformResponse (frappeRequest.js:81:17)
     at async fetch2 (resources.js:103:18)
 
   <meta name="csrf-token" content="{{ csrf_token() }}"> in index.html
+
+
+
+grid-item.vue.mjs?v=5c0164dc:7 Uncaught SyntaxError: The requested module '/node_modules/interactjs/dist/interact.min.js?v=5c0164dc' does not provide an export named 'default' (at grid-item.vue.mjs?v=5c0164dc:7:8)Understand this error
+
+add to   optimizeDeps: {
+    include: ["feather-icons", "showdown", "highlight.js/lib/core", 'interactjs'],
+  },
+
+
+
+Uncaught (in promise) SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
 
 
